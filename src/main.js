@@ -1,8 +1,8 @@
-import { createIcons, ArrowUpRight, ArrowDownRight, ArrowDown, ArrowUp, ArrowLeft, ArrowDownToLine, Globe2, Menu, X, PenLine, ScanSearch, LayoutTemplate, ListChecks, Copy } from 'lucide';
+import { createIcons, ArrowUpRight, ArrowDownRight, ArrowDown, ArrowUp, ArrowLeft, ArrowDownToLine, Globe2, Menu, X, PenLine, ScanSearch, LayoutTemplate, ListChecks, Copy, BookOpen, MapPin } from 'lucide';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-createIcons({ icons: { ArrowUpRight, ArrowDownRight, ArrowDown, ArrowUp, ArrowLeft, ArrowDownToLine, Globe2, Menu, X, PenLine, ScanSearch, LayoutTemplate, ListChecks, Copy } });
+createIcons({ icons: { ArrowUpRight, ArrowDownRight, ArrowDown, ArrowUp, ArrowLeft, ArrowDownToLine, Globe2, Menu, X, PenLine, ScanSearch, LayoutTemplate, ListChecks, Copy, BookOpen, MapPin } });
 const menu = document.querySelector('.menu');
 const header = document.querySelector('.header');
 function closeMenu() { header.classList.remove('menu-open'); menu.setAttribute('aria-expanded', 'false'); menu.setAttribute('aria-label', 'Open navigation'); }
@@ -24,7 +24,17 @@ document.querySelector('#copy-email').addEventListener('click', async () => { co
 
 gsap.registerPlugin(ScrollTrigger);
 gsap.matchMedia().add('(prefers-reduced-motion: no-preference)', () => {
-  gsap.from('.hero h1', { y: 24, opacity: 0, duration: 1, ease: 'power2.out' });
-  gsap.from('.hero-bottom', { y: 16, opacity: 0, duration: .8, delay: .2 });
-  gsap.utils.toArray('.section-heading,.about-grid,.academic,.skill-card,.role,.notebook-card,.learning').forEach(el => { gsap.from(el, { y: 22, opacity: 0, duration: .65, ease: 'power2.out', scrollTrigger: { trigger: el, start: 'top 94%', once: true } }); });
+  gsap.from('.hero-copy,.profile-card', { y: 14, duration: .7, stagger: .1, ease: 'power2.out' });
+  gsap.utils.toArray('.service,.role,.sample').forEach(el => { gsap.from(el, { y: 12, duration: .5, ease: 'power2.out', scrollTrigger: { trigger: el, start: 'top 96%', once: true } }); });
 });
+
+const navLinks = [...document.querySelectorAll('#navigation a')];
+const sectionObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) navLinks.forEach(link => {
+      if (link.hash === `#${entry.target.id}`) link.setAttribute('aria-current', 'location');
+      else link.removeAttribute('aria-current');
+    });
+  });
+}, { rootMargin: '-10% 0px -60% 0px', threshold: 0 });
+navLinks.forEach(link => { const section = document.querySelector(link.hash); if(section) sectionObserver.observe(section); });
