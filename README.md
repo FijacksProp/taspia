@@ -1,21 +1,8 @@
-# Joynob Akhter Taspia — Frontend Web Developer Portfolio
+# Joynob Akhter Taspia — Portfolio
 
-A fast, responsive, and accessible personal portfolio website showcasing modern frontend web development, UI engineering, and data-driven systems design.
+Custom HTML, CSS and JavaScript portfolio, built with Vite, GSAP and Lucide.
 
-Built with **HTML5**, **Modern CSS (Custom Properties, Grid, Flexbox)**, **JavaScript (ES6+)**, **Vite**, **GSAP (ScrollTrigger)**, and **Lucide Icons**.
-
-## Features
-
-- **Web Developer Identity**: Focused on frontend engineering, responsive design systems, accessibility (WCAG), and clean code architectures.
-- **Dark / Light Theme System**: Dynamic CSS custom property token system with automatic system preference detection and `localStorage` persistence.
-- **Interactive Hero Dev Card**: Terminal code inspector with live interactive mini-preview and reactive state demo.
-- **Featured Web Projects**: In-depth project case studies with an interactive code inspector dialog (Architecture, JavaScript Logic, CSS & a11y tokens).
-- **Interactive Dev Lab**: Live client-side playground featuring:
-  1. *Economics Compound Growth Modeler* (Dynamic math engine and real-time reactive DOM calculation)
-  2. *Accessible Toast Notification Dispatcher* (ARIA live regions with auto-dismiss timers)
-  3. *Dynamic CSS Variable Token Styler* (Real-time border curvature and accent color testing)
-- **Technical Skills Matrix**: Comprehensive categorization of Core Frontend, Tooling & Build, Quality & a11y, and Systems & Design.
-- **Interactive Contact Hub**: Client-side validated contact form with email client triggering, instant copy-to-clipboard button, and social links.
+Showcases Joynob Akhter Taspia's balanced expertise across **Frontend Web Development**, **Market Research & Intelligence**, and **Digital Operations**.
 
 ## Local Development
 
@@ -26,16 +13,16 @@ npm install
 # Start local development server
 npm run dev
 
-# Build for production
+# Build for production output in dist/
 npm run build
 
 # Preview production build
 npm run preview
 ```
 
-## Structure
+## Structure & Content
 
-- `index.html`: Semantic HTML5 markup, meta tags, and accessibility landmarks.
-- `src/style.css`: Comprehensive design system, theme variables, fluid typography (`clamp()`), and responsive media queries.
-- `src/main.js`: Theme toggle logic, interactive Dev Lab widgets, project inspector modal dialog, Lucide icons, and GSAP animations.
-- `public/`: Static assets, favicon, and downloadable résumé PDF.
+- `index.html`: Semantic markup, meta tags, and structured sections (Hero, Services, Experience, About, Samples, Contact).
+- `src/style.css`: Warm editorial design system, typography (`Manrope`, `DM Sans`, `Playfair Display`), signature profile card with offset shadow, and responsive media queries.
+- `src/main.js`: Interactive dialog controller for web and research samples, copy email button, and GSAP ScrollTrigger animations.
+- `public/`: Downloadable résumé (`Taspia-Resume.pdf`), favicon, and public assets.
